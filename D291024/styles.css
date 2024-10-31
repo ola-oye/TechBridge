@@ -1,0 +1,29 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(12, 78, 100);
+    margin: 300px auto;
+    animation-name: example;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+}
+
+ @keyframes example {
+     0% {
+         transform: scale(0, 4);
+     }
+     50% {
+         background-color: rgb(136, 184, 196);
+     }
+     100% {
+         transform: scale(5);
+     }
+ }
+
+ @media screen and (max-width: 750px) {
+    .box{
+        width: 300px;
+        height: 3000;
+    }
+ }
