@@ -4,4 +4,4 @@ for (let i = 1; i < 100; i++) {
         counter++;
     }
 }
-console.log(`The number of even number between 1 to 100 is ${counter}`); // The number of even number between 1 to 100 is 50
+console.log(`The number of even number between 1 to 100 is ${counter}`); // The number of even number between 1 to 100 is 49
