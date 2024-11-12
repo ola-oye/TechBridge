@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #f6f6f6;
+  font-size: 0.8125rem;
+  font-family: BlinkMacSystemFont, Segoe UI;
+}
+
+.banner-img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+.nav-links1 {
+  min-height: 2.4375rem !important;
+}
+
+.nav-links1,
+.nav-links1 ul,
+.nav-links3 ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-links1 li,
+.nav-links3 li {
+  display: inline-block;
+  /* background-color: #ed017f; */
+}
+.nav-links1 img {
+  max-height: 1.125rem;
+  max-width: 6.25rem;
+  margin-right: 3.125rem;
+}
+
+.static-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-links2 {
+  background-color: #ed017f;
+  color: #4a4a4a;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-link {
+  margin-right: 60px;
+}
+.nav-logo {
+  height: 35px;
+  object-fit: cover;
+}
+
+/* .wrapper, .logo-link, .search-input{
+    border: 1px solid black;
+} */
+
+.wrapper,
+.search-input {
+  display: inline-block;
+  height: 100%;
+  padding: 1.2rem 0.9375rem;
+}
+
+.search-input {
+  width: 40%;
+  padding: 0;
+}
+.search-span {
+  display: flex;
+  margin: 0.75rem 0.9375rem;
+}
+.input {
+  flex: 1;
+  border: none;
+  height: 35px;
+  border-radius: 4px 0 0 4px;
+  padding: 10px;
+}
+.search-btn {
+  background-color: #fba100;
+  color: #ed017f;
+  cursor: pointer;
+  height: 35px;
+  border-radius: 0 4px 4px 0;
+  padding: 10px;
+  border: none;
+}
+.cart {
+  background-color: #33b27b;
+  border-radius: 0.125rem;
+  height: 2.5rem;
+  padding-top: 10px;
+  margin-left: 10px;
+}
+
+.nav-links3 {
+  background-color: #94004f;
+  max-width: 100%;
+}
+.nav-links3 ul {
+  flex-wrap: nowrap;
+}
+.nav-links3 li {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.75rem 0.9375rem;
+}
+
+.wrap-hover:hover,
+.nav-links3 li:hover {
+  background-color: #fff;
+  transition: background-color 0.5s ease;
+}
+.wrap-hover:hover a {
+  color: #ed017f;
+  transition: color 0.5s ease;
+}
+.nav-links3 li:hover a {
+  color: black;
+  transition: color 0.5s ease;
+}
+.cart:hover{
+    opacity: .9;
+    transition: opacity 0,5s ease-in-out;
+}
+.input:focus{
+    outline: none;
+}
