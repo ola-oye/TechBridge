@@ -73,3 +73,52 @@ function alphabetmap(phrase) {
 }
 
 alphabetmap("I am happy today!");
+
+//Solution to RPG functionality
+
+function singlePlayer(player1, score) {
+  let player = prompt("Enter your choice: rock, paper, or scissors");
+  const components = ["rock", "paper", "scissors"];
+  let choice = components[Math.floor(Math.random() * components.length)];
+
+  if (player === choice) {
+    console.log("It's a draw");
+  } else if (
+    (player === "rock" && choice === "scissors") ||
+    (player === "paper" && choice === "rock") ||
+    (player === "scissors" && choice === "paper")
+  ) {
+    console.log("You win!");
+    score += 1;
+  } else {
+    console.log("You lose!");
+  }
+}
+
+let score = 0;
+let counter = 0;
+while (true) {
+  gameEngine(playerChoice, scores);
+  if (score === 3 && counter < 6) {
+    console.log("You win the game with ease!");
+    break;
+  }else if (score === 3 && counter >= 6) {
+    console.log("You lose the game!");
+    break;
+  } 
+  counter++;
+}
+// function gameEngine(player1 = playerChoice, player2= choice) {
+//   if (player1 === player2) {
+//     console.log("It's a draw");
+//   } else if (
+//     (player1 === "rock" && player2 === "scissors") ||
+//     (player1 === "paper" && player2 === "rock") ||
+//     (player1 === "scissors" && player2 === "paper")
+//   ) {
+//     console.log("You win!");
+//     score += 1;
+//   } else {
+//     console.log("You lose!");
+//   }
+// }
