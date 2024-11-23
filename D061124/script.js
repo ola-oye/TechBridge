@@ -76,49 +76,101 @@ alphabetmap("I am happy today!");
 
 //Solution to RPG functionality
 
-function singlePlayer(player1, score) {
-  let player = prompt("Enter your choice: rock, paper, or scissors");
-  const components = ["rock", "paper", "scissors"];
-  let choice = components[Math.floor(Math.random() * components.length)];
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+const choice1 = document.getElementById("choice1");
+const choice2 = document.getElementById("choice2");
+const printScore1 = document.getElementById("printScore1");
+const printScore2 = document.getElementById("printScore2");
+const printScore = document.getElementById("printScore");
+const printCard = document.getElementById("printCard");
+const printResult = document.getElementById("printResult");
+const star = document.getElementById("star");
+const immResult = document.getElementById("immResult");
+const overlay = document.querySelector(".overlay");
+const modal = document.querySelector(".modal");
+const restart = document.querySelector(".restart");
 
-  if (player === choice) {
-    console.log("It's a draw");
-  } else if (
-    (player === "rock" && choice === "scissors") ||
-    (player === "paper" && choice === "rock") ||
-    (player === "scissors" && choice === "paper")
-  ) {
-    console.log("You win!");
-    score += 1;
+let player1Score = 0;
+let player2Score = 0;
+let round = 5;
+
+function gameOver() {
+  overlay.classList.remove("hidden");
+  modal.classList.remove("hidden");
+  rock.disabled = true;
+  paper.disabled = true;
+  scissors.disabled = true;
+
+  if (player1Score > player2Score) {
+    printResult.innerText = "You win the game!";
+  } else if (player1Score < player2Score) {
+    printResult.innerText = "You lose the game!";
   } else {
-    console.log("You lose!");
+    printResult.innerText = "It's a draw!";
   }
 }
 
-let score = 0;
-let counter = 0;
-while (true) {
-  gameEngine(playerChoice, scores);
-  if (score === 3 && counter < 6) {
-    console.log("You win the game with ease!");
-    break;
-  }else if (score === 3 && counter >= 6) {
-    console.log("You lose the game!");
-    break;
-  } 
-  counter++;
+function startGame() {
+  overlay.classList.add("hidden");
+  modal.classList.add("hidden");
+  printCard.classList.add("hidden");
+  printScore2.innerText = 0;
+  printScore1.innerText = 0;
+
+  rock.disabled = false;
+  paper.disabled = false;
+  scissors.disabled = false;
+  player1Score = 0;
+  player2Score = 0;
+  round = 5;
+  star.innerText = "*".repeat(round);
+  inmmResult.innerText = "Start the game!";
 }
-// function gameEngine(player1 = playerChoice, player2= choice) {
-//   if (player1 === player2) {
-//     console.log("It's a draw");
-//   } else if (
-//     (player1 === "rock" && player2 === "scissors") ||
-//     (player1 === "paper" && player2 === "rock") ||
-//     (player1 === "scissors" && player2 === "paper")
-//   ) {
-//     console.log("You win!");
-//     score += 1;
-//   } else {
-//     console.log("You lose!");
-//   }
-// }
+
+
+function gameEngine(player1Choice) {
+  const components = ["rock", "paper", "scissors"];
+  let player2Choice = components[Math.floor(Math.random() * components.length)];
+
+  printCard.classList.remove("hidden");
+
+  if (player1Choice === player2Choice) {
+    choice1.innerText = player1Choice;
+    choice2.innerText = player2Choice;
+    immResult.innerText = "It's a draw";
+  } else if (
+    (player1Choice === "rock" && player2Choice === "scissors") ||
+    (player1Choice === "paper" && player2Choice === "rock") ||
+    (player1Choice === "scissors" && player2Choice === "paper")
+  ) {
+    choice1.innerText = player1Choice;
+    choice2.innerText = player2Choice;
+    immResult.innerText = "You win!";
+    player1Score++;
+  } else {
+    choice1.innerText = player1Choice;
+    choice2.innerText = player2Choice;
+    immResult.innerText = "You lose!";
+    player2Score++;
+  }
+  printScore1.innerText = player1Score;
+  printScore2.innerText = player2Score;
+  round--;
+  star.innerText = "*".repeat(round);
+
+  if (round === 0) 
+    gameOver();
+}
+
+rock.addEventListener("click", () => {
+  gameEngine("rock");
+});
+paper.addEventListener("click", () => {
+  gameEngine("paper");
+});
+scissors.addEventListener("click", () => {
+  gameEngine("scissors");
+});
+restart.addEventListener("click", startGame);
