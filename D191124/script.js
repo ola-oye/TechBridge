@@ -24,7 +24,7 @@ const page = document.getElementsByClassName("body");
 newName = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("GoldBolder");
-  }, 3000);
+  }, 4000);
 });
 
 console.log(newName)
