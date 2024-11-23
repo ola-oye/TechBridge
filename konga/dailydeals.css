@@ -1,3 +1,4 @@
+::after,
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,7 +14,7 @@ body {
   max-width: 100%;
 }
 
-a {
+.navtab {
   text-decoration: none;
   color: #fff;
 }
@@ -24,6 +25,7 @@ li {
 }
 .nav-links1 {
   min-height: 2.4375rem !important;
+  background-color: #fff;
 }
 
 .nav-links1,
@@ -132,8 +134,6 @@ li {
   margin-right: 0;
 }
 
-
-
 .wrap-hover:hover,
 .nav-links3 li:hover {
   background-color: #fff;
@@ -141,16 +141,76 @@ li {
 }
 .wrap-hover:hover a {
   color: #ed017f;
-  transition: color .5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 .nav-links3 li:hover a {
   color: black;
-  transition: color .5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 .cart:hover {
   opacity: 0.9;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .input:focus {
   outline: none;
+}
+
+.navStatus {
+  background-color: #fff;
+  width: 100%;
+  padding: 30px;
+}
+
+.dirlink {
+  display: inline-block;
+}
+.dirlink > a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.pagetab1 {
+  color: black;
+}
+.dirlink1::after {
+  content: ">";
+  color: lightgrey;
+}
+.pagetab2 {
+  color: #9a0052;
+  font-weight: 500;
+}
+
+.pagetabtitle {
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.products {
+  margin-inline: 100px;
+  margin-top: 30px;
+  height: 500px;
+}
+
+.ad-img {
+  width: 100%;
+}
+.cards {
+  margin-top: 30px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 5px;
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid lightgray;
+  border-radius: 0;
 }
