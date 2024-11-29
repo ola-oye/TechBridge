@@ -10,8 +10,9 @@ body {
   font-family: BlinkMacSystemFont, Segoe UI;
 }
 
+
 .banner-img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .navtab {
@@ -155,6 +156,7 @@ li {
   outline: none;
 }
 
+
 .navStatus {
   background-color: #fff;
   width: 100%;
@@ -187,9 +189,8 @@ li {
 }
 
 .products {
-  margin-inline: 100px;
+  margin-inline: 5%;
   margin-top: 30px;
-  height: 500px;
 }
 
 .ad-img {
@@ -268,4 +269,47 @@ li {
 }
 .addCart-btn:active{
   background-color: #ed017f;
+}
+
+footer{
+  background-color : #0c0c0c;
+  color: #b5b5b5;
+}
+
+footer a{
+  text-decoration: none;
+  color: #b5b5b5;
+}
+.foot1{
+  max-width: 100%;
+  background-color: #2e2e2e;
+}
+.foot-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-inline: 5%;
+  padding: 15px 20px;
+}
+.foot-wrap{
+ display: flex;
+}
+
+.foot2, .a, .b{
+  display: flex;
+}
+.foot2{
+  background-color: #9a0052;
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-inline: 5%;
+  
+}
+.a{
+  justify-content: space-evenly;
+}
+
+.b{
+  flex-direction: column;
 }
