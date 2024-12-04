@@ -16,7 +16,7 @@ for (let j = 1; j <= 100; j++) {
   }
 }
 
-// Multiple table of any number
+// Multiplication table of any number
 function multiplication(num1, num2) {
   for (let k = 0; k <= num2; k++) {
     console.log(`${num1} x ${k} =  ${num1 * k}`);
@@ -74,7 +74,7 @@ function alphabetmap(phrase) {
 
 alphabetmap("I am happy today!");
 
-//Solution to RPG functionality
+//Solution to RPSG functionality
 
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");

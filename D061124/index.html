@@ -10,12 +10,20 @@
     <div class="container">
       <h1 class="title">The Animal World Surviver Game</h1>
 
+      <div class="reportBar">
+        <div id="printScore">
+          Score : <span id="printScore1">0</span> Computer :
+          <span id="printScore2">0</span>
+        </div>
+  
+        <div class="printStatus">
+          <p>Star :<span id="star"> *****</span></p>
+        </div>
+      </div>
+
       <div class="variables">
         <button id="rock" class="var-btn"><img src="images/rock.jpeg" alt="Rock" class="var-img"></button>
 
-        <!-- -->
-<!-- 
- -->
         <button id="paper" class="var-btn"><img src="images/paper.jpeg" alt="Paper" class="var-img"></button>
 
         <button id="scissors" class="var-btn"><img src="images/sicssors.jpeg" alt="Scissors" class="var-img"></button>
@@ -27,19 +35,10 @@
         <p id="immResult">Start the game!</p>
       </div>
 
-      <div id="printScore">
-        Score : <span id="printScore1">0</span> Computer :
-        <span id="printScore2">0</span>
-      </div>
-
-      <div class="printStatus">
-        <p>Star :<span id="star"> *****</span></p>
-      </div>
-
       <div class="modal hidden">
         <button class="restart">New Game</button>
         <!-- <h2 class="massage">You've Completes Five Rounds</h2> -->
-        <h1 id="printResult"></h1>
+        <h2 id="printResult"></h2>
       </div>
       <div class="overlay hidden"></div>
     </div>

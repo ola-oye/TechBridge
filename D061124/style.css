@@ -12,44 +12,67 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-around;
   font-family: sans-serif;
   color: #eed7b3;
   line-height: 1.5;
   background-color: #2f3034;
-  width: 68%;
+  width: 80%;
   margin: 10px auto;
+  padding: 20px;
   border-radius: 15px;
-  box-shadow: 2px 2px 8px #464544;
+  box-shadow: 2px 2px 2px #464544;
 }
 .title {
-  font-size: 5rem;
-  margin: 5rem 0;
-  
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(to top left, #2f3034, #525255);
+  box-shadow: 5px 5px 5px #464544;
+  border: 1px solid #eed7b3;
+  border-radius: 5px;
 }
-.title, #printScore, .printStatus {
-    border: 1px solid #eed7b3;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-    background: linear-gradient(to top left, #2f3034, #525255);
-    box-shadow: 5px 5px 5px #464544;
+
+.reportBar {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-block: 2rem;
+  /* background-color: red; */
 }
+#printScore,
+.printStatus {
+  color: #2f3034;
+  padding: 5px;
+  text-wrap: nowrap;
+  background: linear-gradient(to top left, #b97a50, #f7ecdc);
+  /* box-shadow: 5px 5px 5px #464544; */
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
 .variables {
-  padding: 10px;
-  margin: 5rem 0 3rem;
+  margin-block: 1rem;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
 }
 .var-img {
-  width: 250px;
-  height: 350px;
+  width: 100%;
 }
 
 .var-btn {
   background-color: #eed7b3;
   cursor: pointer;
-  border-radius: 0 4px 4px 0;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 3px;
+  margin-inline: 8px;
   border: none;
-  margin: 20px;
+  flex-wrap: nowrap;
 }
 
 .var-btn:hover {
@@ -63,35 +86,30 @@ body {
 }
 
 #printCard {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
   border: 1px solid #eed7b3;
-  padding: 40px;
-  margin-bottom: 30px;
+  box-shadow: 5px 5px 5px #464544;
+  padding: 10px;
+  margin-bottom: 10px;
   text-align: center;
+  text-wrap: nowrap;
 }
 #printCard > p {
   margin: 10px;
-}
-
-#printScore {
-  font-size: 2.4rem;
-  font-weight: 500;
-  left: 250px;
-  z-index: 4;
 }
 
 .restart {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
-  font-size: 3rem;
+  font-size: 1rem;
   color: #eed7b3;
   cursor: pointer;
-  padding: 15px;
+  padding: 5px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background: #2f3034;
 }
 
@@ -101,8 +119,9 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70%;
+  height: 20%;
   background-color: #eed7b3;
-  padding: 6rem;
+  padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
@@ -116,23 +135,45 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
+  border-radius: 15px;
   z-index: 5;
 }
 
 #printResult {
-  font-size: 80px;
   color: #2f3034;
+  position: absolute;
+  top: 3rem;
+  left: 2rem;
+  font-size: 20px;
 }
 
-.printStatus {
-  font-size: 40px;
-  right: 250px;
-}
-
-#printScore, .printStatus{
-    position: absolute;
-    top: 280px;  
-}
 .hidden {
   display: none;
+}
+
+@media (width >= 768px) {
+  .container {
+    width: 55%;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  #printScore,
+  .printStatus{
+    font-size: 1.5rem;
+    padding: 7px;
+  } 
+  .var-btn {
+    margin: 15px;
+  }
+  #printCard {
+    font-size: 1.5rem;
+  }
+  .restart {
+    font-size: 1.2rem;
+    padding: 7px;
+  }
+  #printResult {
+    font-size: 28px;
+  }
 }
