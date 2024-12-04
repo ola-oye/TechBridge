@@ -95,8 +95,8 @@ const reqt = new XMLHttpRequest();
 // req.responseType = "json";
 // req.onload = () => console.log(req.response.data);
 
-const getJoke = document.getElementById('getJoke')
-
+const getJoke = document.getElementById("getJoke");
+let jokes = [];
 
 const getFacts = new Promise((resolve, reject) => {
   reqt.open("GET", "https://catfact.ninja/facts?limit=15&max_length=60");
@@ -107,19 +107,15 @@ const getFacts = new Promise((resolve, reject) => {
   reqt.onerror = () => reject(reqt.statusText);
 });
 
-let jokes = []
-
-getFacts.then((result) => {
-    result.data.forEach(element => {
-        jokes.push(element.fact)
+getFacts
+  .then((result) => {
+    result.data.forEach((element) => {
+      jokes.push(element.fact);
     });
-})
+  })
+  .catch((error) => console.log(error));
 
-getFacts.catch((error) => console.log(error));
-
-
-getJoke.addEventListener("click", () =>{
-    getJoke.innerText = "Loading...";
-    const randomJoke = jokes[Math.floor(Math.random() * jokes.length)]
-    document.getElementById("joke").innerText = randomJoke;
-})
+getJoke.addEventListener("click", () => {
+  const randomJoke = jokes[Math.floor(Math.random() * jokes.length)];
+  document.getElementById("joke").innerText = randomJoke;
+});
