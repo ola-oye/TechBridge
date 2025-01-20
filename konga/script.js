@@ -1,3 +1,4 @@
+const navbar = document.getElementById("static-navbar");
 const timer = document.querySelectorAll(".timer");
 
 const targetDate = new Date(); // Set the target date
@@ -27,3 +28,13 @@ setInterval(function () {
     element.innerText = `${days}days - ${hours}hrs ${minutes}mins ${seconds}secs`;
   });
 }, 1000);
+
+
+
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 60) { // Trigger after scrolling 100px
+    navbar.classList.add("sticky");
+  } else {
+    navbar.classList.remove("sticky");
+  }
+});
