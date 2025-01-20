@@ -6,7 +6,7 @@ targetDate.setDate(targetDate.getDate() + 6); // Adds 6 days
 // Update the countdown every second
 setInterval(function () {
   const now = new Date();
-  const diff = targetDate - now; // Difference in milliseconds
+  const diff = targetDate - now; 
 
   if (diff <= 0) {
     timer.forEach((element) => {
